@@ -10,7 +10,7 @@ This collection covers dynamic CRUD operations, authentication, pagination, and 
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation / Import](#installation--import)
-- [Collection Structure](#collection-structure)
+- [Collection & Environment Structure](#collection--environment-structure)
 - [Variables](#variables)
 - [How to Run](#how-to-run)
 - [Author](#author)
@@ -34,6 +34,7 @@ This collection covers dynamic CRUD operations, authentication, pagination, and 
 - Includes **pre-request scripts** for dynamic data generation
 - Includes **test scripts** for status codes and response validation
 - Demonstrates **Postman environment variables** usage
+- Uses **API key authentication** (`x-api-key: reqres-free-v1`)
 
 ---
 
@@ -45,13 +46,17 @@ This collection covers dynamic CRUD operations, authentication, pagination, and 
 ---
 
 ## Installation / Import
-1. Download this repository or copy the JSON file `Reqres_Advanced_Portfolio_Tests.json`.
-2. Open Postman → Click **Import** → Select the JSON file.
-3. The collection will appear in your workspace.
+1. Download this repository.
+2. Import the Postman collection JSON:
+   - Open Postman → Click **Import** → Select `Reqres_Advanced_Portfolio_Tests.json`
+3. Import the environment JSON:
+   - Open Postman → Click **Import** → Select `Reqres_Advanced_Portfolio_Environment.postman_environment.json`
+4. Select the environment in Postman before running requests.
 
 ---
 
-## Collection Structure
+## Collection & Environment Structure
+### Collection: `Reqres Advanced Portfolio Tests`
 - **User Workflow**
   - `Create User`, `Get Existing User`, `Update Existing User`, `Delete Existing User`
 - **Authentication**
@@ -61,20 +66,18 @@ This collection covers dynamic CRUD operations, authentication, pagination, and 
 - **Negative Tests**
   - `Get Non-existing User`
 
----
-
-## Variables
-| Variable      | Description                                    | Example                     |
-|---------------|-----------------------------------------------|-----------------------------|
-| `baseURL`     | Base URL of the API                             | `https://reqres.in/api`    |
-| `token`       | Stores authentication token after login       | `abc123`                    |
-| `randomName`  | Dynamic name for user creation                 | `User1234`                  |
-| `randomJob`   | Dynamic job for user creation/update           | `Job5678`                   |
+### Environment: `Reqres Advanced Portfolio Environment`
+- Variables:
+  - `baseURL` – API base URL
+  - `token` – Authentication token
+  - `randomName` – Dynamic name for user creation
+  - `randomJob` – Dynamic job for user creation/update
+  - `x-api-key` – Reqres API key
 
 ---
 
 ## How to Run
-1. Ensure variables are correctly set in your environment.
+1. Ensure the environment is selected in Postman.
 2. Run individual requests or the entire collection.
 3. Observe tests passing in Postman’s **Tests** tab.
 4. Dynamic data and validations are applied automatically via scripts.
